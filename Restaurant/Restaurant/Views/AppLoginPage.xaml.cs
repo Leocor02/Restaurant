@@ -16,5 +16,17 @@ namespace Restaurant.Views
         {
             InitializeComponent();
         }
+
+        private void CmdWatchPassword(object sender, ToggledEventArgs e)
+        {
+            if (SwWatchPassword.IsToggled)
+            {
+                TxtPassword.IsPassword = false;
+            }
+            else
+            {
+                TxtPassword.IsPassword = true;
+            }
+        }
     }
 }
