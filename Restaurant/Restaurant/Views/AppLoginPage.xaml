@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Restaurant.Views.AppLoginPage"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <StackLayout Padding="30,0,30,0" VerticalOptions="Center" >
+            <Entry x:Name="TxtUserName" Placeholder="User email" FontSize="22" Keyboard="Email"/>
+            <Entry x:Name="TxtPassword" Placeholder="Password" FontSize="22" IsPassword="True" Keyboard="Default"/>
+
+        
+
+            <Button x:Name="BtnLogin" Text="Login" FontSize="22" CornerRadius="20" BackgroundColor="#2AA397" Margin="0,5,0,5"/>
+            <Button x:Name="BtnSignIn" Text="Sign Up" FontSize="22" CornerRadius="20" BackgroundColor="#2AA397"/>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
