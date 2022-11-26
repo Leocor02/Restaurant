@@ -3,15 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Restaurant.Views.AppLoginPage"
              Shell.NavBarIsVisible="False"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="Background">
 
     <ContentPage.Content>
+
         <StackLayout Padding="30,0,30,0" VerticalOptions="Center" >
-            <Entry x:Name="TxtUserName" Placeholder="User email" FontSize="22" Keyboard="Email"/>
-            <Entry x:Name="TxtPassword" Placeholder="Password" FontSize="22" IsPassword="True" Keyboard="Default"/>
 
-            <Switch x:Name="SwWatchPassword" IsToggled="False" Toggled="CmdWatchPassword"/>
+            <Entry x:Name="TxtUserName" Placeholder="User email" FontSize="22" Keyboard="Email" TextColor="GhostWhite" PlaceholderColor="white"/>
 
+            <StackLayout Padding="0,5,0,30" Orientation="Horizontal" Spacing="15" HorizontalOptions="FillAndExpand">
+
+                <Entry x:Name="TxtPassword" Placeholder="Password" FontSize="22" IsPassword="True" Keyboard="Default" TextColor="GhostWhite" PlaceholderColor="white" WidthRequest="260"/>
+
+                <StackLayout>
+                    <Switch x:Name="SwWatchPassword" IsToggled="False" Toggled="CmdWatchPassword"/>
+                    <Label Text="Watch Password" FontSize="Micro" TextColor="White" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+
+            </StackLayout>
+            
             <Button x:Name="BtnLogin" Text="Login" FontSize="22" CornerRadius="20" BackgroundColor="#2AA397" Margin="0,5,0,5"/>
             <Button x:Name="BtnSignIn" Text="Sign Up" FontSize="22" CornerRadius="20" BackgroundColor="#2AA397"/>
 
