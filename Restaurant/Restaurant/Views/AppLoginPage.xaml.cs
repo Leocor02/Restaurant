@@ -28,5 +28,10 @@ namespace Restaurant.Views
                 TxtPassword.IsPassword = true;
             }
         }
+
+        private async void BtnSignIn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new UserSignUpPage());
+        }
     }
 }

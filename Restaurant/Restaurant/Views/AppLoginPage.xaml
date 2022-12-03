@@ -8,7 +8,7 @@
 
     <ContentPage.Content>
 
-        <StackLayout Padding="30,0,30,0" VerticalOptions="Center" >
+        <StackLayout Padding="40,0,40,0" VerticalOptions="Center" >
 
             <Entry x:Name="TxtUserName" Placeholder="User email" FontSize="22" Keyboard="Email" TextColor="GhostWhite" PlaceholderColor="white"/>
 
@@ -24,7 +24,7 @@
             </StackLayout>
             
             <Button x:Name="BtnLogin" Text="Login" FontSize="22" CornerRadius="20" BackgroundColor="#2AA397" Margin="0,5,0,5"/>
-            <Button x:Name="BtnSignIn" Text="Sign Up" FontSize="22" CornerRadius="20" BackgroundColor="#2AA397"/>
+            <Button x:Name="BtnSignIn" Text="Sign Up" FontSize="22" CornerRadius="20" BackgroundColor="#2AA397" Clicked="BtnSignIn_Clicked"/>
 
 
         </StackLayout>

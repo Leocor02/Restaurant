@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Restaurant.Views.UserSignUpPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20,100,20,0" HorizontalOptions="FillAndExpand">
+            <Entry x:Name="TxtName" Placeholder="Name"/>
+            <Entry x:Name="TxtEmail" Placeholder="Email"/>
+            <Entry x:Name="TxtPassword" Placeholder="Password" IsPassword="True"/>
+            <Entry x:Name="TxtBackUpEmail" Placeholder="Backup Email"/>
+            <Entry x:Name="TxtPhone" Placeholder="Phone"/>
+            <Entry x:Name="TxtActive" Placeholder="Active"/>
+
+            <Picker x:Name="PckUserRole" Title="Select a user role" ItemDisplayBinding="{Binding Role}"/>
+            <Picker x:Name="PckCountry" Title="Select a country" ItemDisplayBinding="{Binding CountryName}"/>
+
+            <Button x:Name="BtnAdd" Text="Add" Clicked="BtnAdd_Clicked"/>
+            <Button x:Name="BtnCancel" Text="Cancel" Clicked="BtnCancel_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
