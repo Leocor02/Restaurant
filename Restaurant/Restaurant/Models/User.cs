@@ -45,7 +45,6 @@ namespace Restaurant.Models
 
                 RestClient client = new RestClient(FinalURL);
 
-
                 request = new RestRequest(FinalURL, Method.Post);
 
                 //agregar la info de segueridad del api, en este caso api key
@@ -78,5 +77,41 @@ namespace Restaurant.Models
             }
         }
 
+
+        public async Task<bool> ValidateLogin()
+        {
+            try
+            {
+                string RouteSufix = string.Format("Users/ValidateLogin?UserName={0}&UserPassword={1}",this.Email, this.UserPassword);
+                string FinalURL = Services.CnnToRApi.ProductionURL + RouteSufix;
+
+                RestClient client = new RestClient(FinalURL);
+
+                request = new RestRequest(FinalURL, Method.Get);
+
+                //agregar la info de segueridad del api, en este caso api key
+                request.AddHeader(Services.CnnToRApi.ApiKeyName, Services.CnnToRApi.ApiKeyValue);
+                request.AddHeader(contentType, mimetype);
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+                HttpStatusCode statusCode = response.StatusCode;
+
+                if (statusCode == HttpStatusCode.OK)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                throw;
+            }
+        }
     }
 }

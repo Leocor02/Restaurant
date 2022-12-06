@@ -56,7 +56,8 @@ namespace Restaurant.Views
                                                 TxtPassword.Text.Trim(),
                                                 TxtBackUpEmail.Text.Trim(),
                                                 TxtPhone.Text.Trim(),
-                                                TxtActive.Text.Trim();
+                                                TxtActive.Text.Trim()
+                                                );
 
             if (R)
             {
