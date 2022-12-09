@@ -73,9 +73,13 @@ namespace Restaurant.ViewModels
                                            string pPassword,
                                            string pBkpEmail,
                                            string pPhoneNumber,
-                                           bool pActive,
-                                           int pIdUserRole = 2,
-                                           int pIdCountry = 1)
+                                           //Borrar los dos de abajo una vez arreglado lo del TxtActive
+                                           //int pUserRole = 2,
+                                           //int pCountry = 1
+                                           //Descomentar los dos de abajo una vez arreglado lo del TxtActive
+                                           int pUserRole,
+                                           int pCountry,
+                                           bool pActive = true)
         {
             if (IsBusy) return false;
             IsBusy = true;
@@ -88,8 +92,8 @@ namespace Restaurant.ViewModels
                 MyUser.BackUpEmail = pBkpEmail;
                 MyUser.PhoneNumber = pPhoneNumber;
                 MyUser.Active = pActive;
-                MyUser.IduserRole = pIdUserRole;
-                MyUser.Idcountry = pIdCountry;
+                MyUser.IduserRole = pUserRole;
+                MyUser.Idcountry = pCountry;
 
                 bool R = await MyUser.AddUser();
 

@@ -5,10 +5,10 @@
     <ContentPage.Content>
         <StackLayout Padding="20,100,20,0" HorizontalOptions="FillAndExpand">
             <Entry x:Name="TxtName" Placeholder="Name"/>
-            <Entry x:Name="TxtEmail" Placeholder="Email"/>
+            <Entry x:Name="TxtEmail" Placeholder="Email" Keyboard="Email"/>
             <Entry x:Name="TxtPassword" Placeholder="Password" IsPassword="True"/>
-            <Entry x:Name="TxtBackUpEmail" Placeholder="Backup Email"/>
-            <Entry x:Name="TxtPhone" Placeholder="Phone"/>
+            <Entry x:Name="TxtBackUpEmail" Placeholder="Backup Email" Keyboard="Email"/>
+            <Entry x:Name="TxtPhone" Placeholder="Phone" Keyboard="Telephone"/>
             <Entry x:Name="TxtActive" Placeholder="Active"/>
 
             <Picker x:Name="PckUserRole" Title="Select a user role" ItemDisplayBinding="{Binding Role}"/>
