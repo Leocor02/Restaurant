@@ -73,10 +73,6 @@ namespace Restaurant.ViewModels
                                            string pPassword,
                                            string pBkpEmail,
                                            string pPhoneNumber,
-                                           //Borrar los dos de abajo una vez arreglado lo del TxtActive
-                                           //int pUserRole = 2,
-                                           //int pCountry = 1
-                                           //Descomentar los dos de abajo una vez arreglado lo del TxtActive
                                            int pUserRole,
                                            int pCountry,
                                            bool pActive = true)

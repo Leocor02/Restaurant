@@ -40,8 +40,6 @@ namespace Restaurant.Views
             await Navigation.PopAsync();    
         }
 
-        //Descomentar después de arreglar el Txtactive
-        //Método para verificar que todos los campos se llenen
         private bool UserInputValidation()
         {
             bool R = false;
@@ -147,7 +145,6 @@ namespace Restaurant.Views
                                                 TxtPassword.Text.Trim(),
                                                 TxtBackUpEmail.Text.Trim(),
                                                 TxtPhone.Text.Trim(),
-                                                //Descomentar después de arreglar el Txtactive
                                                 IdRol,
                                                 IdCountry,
                                                 Active
