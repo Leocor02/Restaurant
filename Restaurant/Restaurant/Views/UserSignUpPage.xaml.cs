@@ -29,20 +29,88 @@ namespace Restaurant.Views
             PckCountry.ItemsSource = await viewModel.GetCountryList();
         }
 
-        private void Cancel_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Cancel_Clicked_1(object sender, EventArgs e)
-        {
-
-        }
-
         private async void BtnCancel_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();    
         }
+
+        private bool UserInputValidation()
+        {
+            bool R = false;
+
+            if (TxtName.Text != null && !string.IsNullOrEmpty(TxtName.Text.Trim()) &&
+                TxtEmail.Text != null && !string.IsNullOrEmpty(TxtEmail.Text.Trim()) &&
+                TxtPassword.Text != null && !string.IsNullOrEmpty(TxtPassword.Text.Trim()) &&
+                TxtBackUpEmail.Text != null && !string.IsNullOrEmpty(TxtBackUpEmail.Text.Trim()) &&
+                TxtPhone.Text != null && !string.IsNullOrEmpty(TxtPhone.Text.Trim()) &&
+                PckUserRole.SelectedIndex > -1 && PckCountry.SelectedIndex > -1)
+            {
+                R = true;
+            }
+            else
+            {
+                //en caso que alguna validación falle se le indica al usaurio que hace falta
+                if (TxtName.Text == null || string.IsNullOrEmpty(TxtName.Text.Trim()))
+                {
+                    DisplayAlert("Validation error", "Name is required", "Ok");
+                    TxtName.Focus();
+                    return false;
+                }
+
+                if (TxtEmail.Text == null || string.IsNullOrEmpty(TxtEmail.Text.Trim()))
+                {
+                    DisplayAlert("Validation error", "Email is required", "Ok");
+                    TxtEmail.Focus();
+                    return false;
+                }
+
+                if (TxtPassword.Text == null || string.IsNullOrEmpty(TxtPassword.Text.Trim()))
+                {
+                    DisplayAlert("Validation error", "Password is required", "Ok");
+                    TxtPassword.Focus();
+                    return false;
+                }
+
+                if (TxtBackUpEmail.Text == null || string.IsNullOrEmpty(TxtBackUpEmail.Text.Trim()))
+                {
+                    DisplayAlert("Validation error", "BackUp email is required", "Ok");
+                    TxtBackUpEmail.Focus();
+                    return false;
+                }
+
+                if (TxtPhone.Text == null || string.IsNullOrEmpty(TxtPhone.Text.Trim()))
+                {
+                    DisplayAlert("Validation error", "Phone number is required", "Ok");
+                    TxtPhone.Focus();
+                    return false;
+                }
+
+                if (TxtActive.Text == null || string.IsNullOrEmpty(TxtActive.Text.Trim()))
+                {
+                    DisplayAlert("Validation error", "Active is required", "Ok");
+                    TxtActive.Focus();
+                    return false;
+                }
+
+                if (PckUserRole.SelectedIndex == -1)
+                {
+                    DisplayAlert("Validation error", "User Role is required", "Ok");
+                    PckUserRole.Focus();
+                    return false;
+                }
+
+                if (PckCountry.SelectedIndex == -1)
+                {
+                    DisplayAlert("Validation error", "Country is required", "Ok");
+                    PckCountry.Focus();
+                    return false;
+                }
+
+            }
+
+            return R;
+        }
+
 
         private async void BtnAdd_Clicked(object sender, EventArgs e)
         {
@@ -70,16 +138,17 @@ namespace Restaurant.Views
                                                 TxtPhone.Text.Trim(),
                                                 IdCountry);
 
-            if (R)
-            {
-                await DisplayAlert(":)", "Everything is ok", "Ok");
-                await Navigation.PopAsync();
+                    if (R)
+                    {
+                        await DisplayAlert(":)", "Everything is ok", "Ok");
+                        await Navigation.PopAsync();
+                    }
+                    else
+                    {
+                        await DisplayAlert(":(", "Something went wrong", "Ok");
+                    }
+                }
             }
-            else
-            {
-                await DisplayAlert(":(", "Something went wrong", "Ok");
-            }
-                                                
         }
     }
 }

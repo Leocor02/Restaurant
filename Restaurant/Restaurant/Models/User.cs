@@ -45,7 +45,6 @@ namespace Restaurant.Models
 
                 RestClient client = new RestClient(FinalURL);
 
-
                 request = new RestRequest(FinalURL, Method.Post);
 
                 //agregar la info de segueridad del api, en este caso api key
