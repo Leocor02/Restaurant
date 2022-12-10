@@ -10,21 +10,21 @@
 
         <StackLayout Padding="40,0,40,0" VerticalOptions="Center" >
 
-            <Entry x:Name="TxtUserName" Placeholder="User email" FontSize="22" Keyboard="Email" TextColor="GhostWhite" PlaceholderColor="white"/>
+            <Entry x:Name="TxtUserName" Placeholder="Correo Electrónico" FontSize="22" Keyboard="Email" TextColor="GhostWhite" PlaceholderColor="white"/>
 
             <StackLayout Padding="0,5,0,30" Orientation="Horizontal" Spacing="15" HorizontalOptions="FillAndExpand">
 
-                <Entry x:Name="TxtPassword" Placeholder="Password" FontSize="22" IsPassword="True" Keyboard="Default" TextColor="GhostWhite" PlaceholderColor="white" WidthRequest="260"/>
+                <Entry x:Name="TxtPassword" Placeholder="Contraseña" FontSize="22" IsPassword="True" Keyboard="Default" TextColor="GhostWhite" PlaceholderColor="white" WidthRequest="260"/>
 
                 <StackLayout>
                     <Switch x:Name="SwWatchPassword" IsToggled="False" Toggled="CmdWatchPassword"/>
-                    <Label Text="Watch Password" FontSize="Micro" TextColor="White" HorizontalTextAlignment="Center"/>
+                    <Label Text="Ver Contraseña" FontSize="Micro" TextColor="White" HorizontalTextAlignment="Center"/>
                 </StackLayout>
 
             </StackLayout>
-            
-            <Button x:Name="BtnLogin" Text="Login" FontSize="22" CornerRadius="20" BackgroundColor="#2AA397" Margin="0,5,0,5" Clicked="BtnLogin_Clicked" />
-            <Button x:Name="BtnSignIn" Text="Sign Up" FontSize="22" CornerRadius="20" BackgroundColor="#2AA397" Clicked="BtnSignIn_Clicked"/>
+
+            <Button x:Name="BtnLogin" Text="Iniciar Sesión" FontSize="22" CornerRadius="20" BackgroundColor="#2AA397" Margin="0,5,0,5" Clicked="BtnLogin_Clicked" />
+            <Button x:Name="BtnSignIn" Text="Registrarse" FontSize="22" CornerRadius="20" BackgroundColor="#2AA397" Clicked="BtnSignIn_Clicked"/>
 
 
         </StackLayout>

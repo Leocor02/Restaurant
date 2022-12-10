@@ -1,18 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Restaurant.Views.UserSignUpPage">
+             x:Class="Restaurant.Views.UserSignUpPage"
+             NavigationPage.HasBackButton="False"
+             >
     <ContentPage.Content>
         <StackLayout Padding="20,100,20,0" HorizontalOptions="FillAndExpand">
-            <Entry x:Name="TxtName" Placeholder="Name"/>
-            <Entry x:Name="TxtEmail" Placeholder="Email" Keyboard="Email"/>
-            <Entry x:Name="TxtPassword" Placeholder="Password" IsPassword="True"/>
-            <Entry x:Name="TxtBackUpEmail" Placeholder="Backup Email"/>
-            <Entry x:Name="TxtPhone" Placeholder="Phone"/>
-            <Picker x:Name="PckCountry" Title="Select a country" ItemDisplayBinding="{Binding CountryName}"/>
+            <Entry x:Name="TxtName" Placeholder="Nombre"/>
+            <Entry x:Name="TxtEmail" Placeholder="Correo" Keyboard="Email"/>
+            <Entry x:Name="TxtPassword" Placeholder="Contraseña" IsPassword="True"/>
+            <Entry x:Name="TxtBackUpEmail" Placeholder="Correo de Respaldo"/>
+            <Entry x:Name="TxtPhone" Placeholder="Número de Teléfono"/>
+            <Picker x:Name="PckCountry" Title="Selecione su País" ItemDisplayBinding="{Binding CountryName}"/>
 
-            <Button x:Name="BtnAdd" Text="Add" Clicked="BtnAdd_Clicked"/>
-            <Button x:Name="BtnCancel" Text="Cancel" Clicked="BtnCancel_Clicked"/>
+            <Button x:Name="BtnAdd" Text="Registrarse" Clicked="BtnAdd_Clicked"/>
+            <Button x:Name="BtnCancel" Text="Cancelar" Clicked="BtnCancel_Clicked"/>
 
         </StackLayout>
     </ContentPage.Content>

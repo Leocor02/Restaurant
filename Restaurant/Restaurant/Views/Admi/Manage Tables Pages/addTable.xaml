@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Restaurant.Views.Admi.Manage_Tables_Pages.addTable"
+             Title="Agregar Mesa"
+             NavigationPage.HasBackButton="False"
+             >
+    <ContentPage.Content>
+        <StackLayout Padding="20,100,20,0" HorizontalOptions="FillAndExpand">
+            <Picker x:Name="pickerFloor" Title="Selecione un piso">
+                <Picker.Items>
+                    <x:String>Primer Piso</x:String>
+                    <x:String>Segundo Piso</x:String>
+                    <x:String>Terraza</x:String>
+                </Picker.Items>
+            </Picker>
+            <Entry x:Name="txtQuantity" Placeholder="Cantidad de sillas"/>
+
+            <Button x:Name="BtnAdd" Text="Agregar Mesa" Clicked="BtnAdd_Clicked"/>
+            <Button x:Name="BtnCancel" Text="Cancelar" Clicked="BtnCancel_Clicked" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

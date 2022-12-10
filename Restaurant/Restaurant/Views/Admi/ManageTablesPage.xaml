@@ -6,10 +6,64 @@
               NavigationPage.HasBackButton="False"
              >
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Add Employee"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView BackgroundColor="#85EA2D">
+
+            <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Start">
+
+                <Label Text="Opciones (Administrar Empleados)" 
+                       Margin="50"
+                       HorizontalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="CenterAndExpand" 
+                       FontSize="Large"
+                       TextColor="White"
+                       />
+
+                <Grid RowSpacing="20" ColumnSpacing="20" Padding="0,50,0,0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Row="0" Grid.Column="0" Text="Ver Mesas"
+                            HeightRequest="150"
+                            WidthRequest="150"
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            CornerRadius="20"
+                            BackgroundColor="#61AFFE"
+                            />
+
+                    <Button Grid.Row="0" Grid.Column="1" Text="Agregar Mesa"
+                                HeightRequest="150"
+                            WidthRequest="150"
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            CornerRadius="20"
+                            BackgroundColor="#49CC90"  
+                            Clicked="Button_Clicked"
+                            />
+
+                    <Button Grid.Row="1" Grid.Column="0" Text="Modificar Mesa"
+                              HeightRequest="150"
+                            WidthRequest="150"
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            CornerRadius="20"
+                            BackgroundColor="#FCA130"
+                            />
+                </Grid>
+
+            </FlexLayout>
+
+        </ScrollView>
+
+
     </ContentPage.Content>
 </ContentPage>

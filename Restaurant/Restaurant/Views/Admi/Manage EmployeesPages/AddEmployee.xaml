@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Restaurant.Views.Admi.Manage_Employees.AddEmployee"
              Title="Agregar Empleado"
-             
+             NavigationPage.HasBackButton="False"
              >
     <ContentPage.Content>
         <StackLayout Padding="20,100,20,0" HorizontalOptions="FillAndExpand">
