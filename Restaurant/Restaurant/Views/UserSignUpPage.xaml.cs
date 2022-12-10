@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Restaurant.ViewModels;
+using Restaurant.Models;
 
 namespace Restaurant.Views
 {
@@ -20,14 +21,8 @@ namespace Restaurant.Views
             //se agrega el bindingContext de la vista contra el viewModel
             BindingContext = viewModel = new UserViewModel ();
 
-            LoadUserRolesList();
             LoadCountryList();
 		}
-
-        private async void LoadUserRolesList()
-        {
-            PckUserRole.ItemsSource = await viewModel.GetUserRoleList();
-        }
 
         private async void LoadCountryList()
         {
@@ -51,12 +46,29 @@ namespace Restaurant.Views
 
         private async void BtnAdd_Clicked(object sender, EventArgs e)
         {
+            if (TxtName.Text.Trim() == "" || TxtEmail.Text.Trim() == "" 
+                || TxtPassword.Text.Trim() == "" || TxtBackUpEmail.Text.Trim() == "" 
+                || TxtPhone.Text.Trim() == "") {
+
+                await DisplayAlert(":)", "Fill all the fields", "Ok");
+                return;
+
+            }
+
+            int IdCountry = 1;
+
+            Country countryid = PckCountry.SelectedItem as Country;
+
+
+
+            IdCountry = countryid.Idcountry;
+
             bool R = await viewModel.AddNewUser(TxtName.Text.Trim(),
                                                 TxtEmail.Text.Trim(),
                                                 TxtPassword.Text.Trim(),
                                                 TxtBackUpEmail.Text.Trim(),
                                                 TxtPhone.Text.Trim(),
-                                                TxtActive.Text.Trim();
+                                                IdCountry);
 
             if (R)
             {

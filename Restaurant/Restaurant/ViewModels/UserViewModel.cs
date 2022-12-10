@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Restaurant.Models;
+using Restaurant.Models.DTO;
+using Xamarin.Forms;
 
 namespace Restaurant.ViewModels
 {
@@ -14,11 +17,14 @@ namespace Restaurant.ViewModels
 
         public User MyUser { get; set; }
 
+        public UserDTO MyUserDTO { get; set; }
+
         public UserViewModel()
         {
             MyUserRole= new UserRole();
             MyCountry= new Country();
             MyUser= new User(); 
+            MyUserDTO = new UserDTO();
         }
 
         public async Task<List<UserRole>> GetUserRoleList()
@@ -73,9 +79,7 @@ namespace Restaurant.ViewModels
                                            string pPassword,
                                            string pBkpEmail,
                                            string pPhoneNumber,
-                                           bool pActive,
-                                           int pIdUserRole = 2,
-                                           int pIdCountry = 1)
+                                           int pIdCountry)
         {
             if (IsBusy) return false;
             IsBusy = true;
@@ -87,8 +91,8 @@ namespace Restaurant.ViewModels
                 MyUser.UserPassword = pPassword;
                 MyUser.BackUpEmail = pBkpEmail;
                 MyUser.PhoneNumber = pPhoneNumber;
-                MyUser.Active = pActive;
-                MyUser.IduserRole = pIdUserRole;
+                MyUser.Active = true;
+                MyUser.IduserRole = 2;
                 MyUser.Idcountry = pIdCountry;
 
                 bool R = await MyUser.AddUser();
@@ -102,9 +106,66 @@ namespace Restaurant.ViewModels
             }
             finally 
             {
-                IsBusy = false; 
+                IsBusy = false;
             } 
             
         }
+   
+ public async Task<UserDTO> getUserData(string email)
+        {
+
+            try
+            {
+                UserDTO user = new UserDTO();
+
+                user = await MyUserDTO.getUserData(email);
+
+                if (user == null) { return null; } else { return user; }
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+        }
+
+
+        public async Task<bool> UserAccessValidation(string email, string password)
+        {
+            if (IsBusy) return false;
+            IsBusy = true;
+
+
+
+            try
+            {
+                MyUser.Email = email;
+                MyUser.UserPassword = password;
+
+
+
+                bool R = await MyUser.ValidateLogin();
+
+
+
+                return R;
+
+
+
+            }
+            catch (Exception)
+            {
+
+
+
+                return false;
+                throw;
+            }
+            finally
+            { IsBusy = false; }
+
+        }
+
+
     }
 }

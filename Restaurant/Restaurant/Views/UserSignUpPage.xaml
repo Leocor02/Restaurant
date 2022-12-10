@@ -9,9 +9,6 @@
             <Entry x:Name="TxtPassword" Placeholder="Password" IsPassword="True"/>
             <Entry x:Name="TxtBackUpEmail" Placeholder="Backup Email"/>
             <Entry x:Name="TxtPhone" Placeholder="Phone"/>
-            <Entry x:Name="TxtActive" Placeholder="Active"/>
-
-            <Picker x:Name="PckUserRole" Title="Select a user role" ItemDisplayBinding="{Binding Role}"/>
             <Picker x:Name="PckCountry" Title="Select a country" ItemDisplayBinding="{Binding CountryName}"/>
 
             <Button x:Name="BtnAdd" Text="Add" Clicked="BtnAdd_Clicked"/>

@@ -29,8 +29,8 @@ namespace Restaurant.Models
         public int IduserRole { get; set; }
         public int Idcountry { get; set; }
 
-        public virtual Country? IdcountryNavigation { get; set; } = null!;
-        public virtual UserRole? IduserRoleNavigation { get; set; } = null!;
+        public virtual Country IdcountryNavigation { get; set; } = null!;
+        public virtual UserRole IduserRoleNavigation { get; set; } = null!;
 
         //public virtual ICollection<Invoice> Invoices { get; set; }
         //public virtual ICollection<Reservation> Reservations { get; set; }
@@ -53,7 +53,10 @@ namespace Restaurant.Models
                 request.AddHeader(contentType, mimetype);
 
                 //serializar la clase para poder enviarla al api
-                string SerialClass = JsonConvert.SerializeObject(this);
+                var settings = new JsonSerializerSettings();
+                settings.NullValueHandling = NullValueHandling.Ignore;
+
+                string SerialClass = JsonConvert.SerializeObject(this, settings);
 
                 request.AddBody(SerialClass, mimetype);
 
@@ -76,6 +79,82 @@ namespace Restaurant.Models
                 string msg = ex.Message;
                 throw;
             }
+        }
+
+        public async Task<bool> ValidateLogin()
+        {
+
+
+
+            try
+            {
+
+                string RouteSufix = string.Format("Users/ValidateUserCredentials?email={0}&password={1}",
+                   this.Email, this.UserPassword);
+                string FinalURL = Services.CnnToRApi.ProductionURL + RouteSufix;
+
+
+
+                RestClient client = new RestClient(FinalURL);
+
+
+
+                request = new RestRequest(FinalURL, Method.Get);
+
+
+
+                //agregar la info de seguridad del api , aqui va la apikey
+
+
+
+                request.AddHeader(Services.CnnToRApi.ApiKeyName, Services.CnnToRApi.ApiKeyValue);
+                request.AddHeader(contentType, mimetype);
+
+
+
+
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+
+
+                HttpStatusCode statusCode = response.StatusCode;
+
+
+
+                //carga de info en un json
+
+
+
+
+                if (statusCode == HttpStatusCode.OK)
+                {
+                    //carga de info en un json
+
+
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+
+
+                string msg = ex.Message;
+
+
+
+                //to do guardar errores en una bitacora.
+                throw;
+            }
+
+
+
         }
 
     }
