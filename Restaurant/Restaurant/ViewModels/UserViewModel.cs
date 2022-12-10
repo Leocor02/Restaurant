@@ -79,6 +79,7 @@ namespace Restaurant.ViewModels
                                            string pPassword,
                                            string pBkpEmail,
                                            string pPhoneNumber,
+                                           int rolID,
                                            int pIdCountry)
         {
             if (IsBusy) return false;
@@ -92,7 +93,7 @@ namespace Restaurant.ViewModels
                 MyUser.BackUpEmail = pBkpEmail;
                 MyUser.PhoneNumber = pPhoneNumber;
                 MyUser.Active = true;
-                MyUser.IduserRole = 2;
+                MyUser.IduserRole = rolID;
                 MyUser.Idcountry = pIdCountry;
 
                 bool R = await MyUser.AddUser();

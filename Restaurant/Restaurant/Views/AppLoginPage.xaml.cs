@@ -88,10 +88,16 @@ namespace Restaurant.Views
 
                 if (GlobalItems.GlobalUser.IduserRole == 1) {
                     await Navigation.PushAsync(new HomeAdmin());
+                }else if (GlobalItems.GlobalUser.IduserRole == 2) {
+                    await Navigation.PushAsync(new HomeClient());
+                }
+                else if (GlobalItems.GlobalUser.IduserRole == 3)
+                {
+                    await Navigation.PushAsync(new EmployeeHomePage());
                 }
                 else
                 {
-                    await Navigation.PushAsync(new HomeClient());
+                   await DisplayAlert("Error!","El rol no corresponde, pongase en contacto con los administradores","ok");
                 }
              
                 TxtUserName.Text = "";

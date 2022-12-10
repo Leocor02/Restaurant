@@ -109,6 +109,7 @@ namespace Restaurant.Views
             }
 
             int IdCountry = 1;
+            int rolID = 2;//id rol cliente
 
             Country countryid = PckCountry.SelectedItem as Country;
 
@@ -121,6 +122,7 @@ namespace Restaurant.Views
                                                 TxtPassword.Text.Trim(),
                                                 TxtBackUpEmail.Text.Trim(),
                                                 TxtPhone.Text.Trim(),
+                                                rolID,
                                                 IdCountry);
 
                     if (R)

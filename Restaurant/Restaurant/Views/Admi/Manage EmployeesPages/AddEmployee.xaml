@@ -6,10 +6,17 @@
              
              >
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="20,100,20,0" HorizontalOptions="FillAndExpand">
+            <Entry x:Name="TxtName" Placeholder="Name"/>
+            <Entry x:Name="TxtEmail" Placeholder="Email" Keyboard="Email"/>
+            <Entry x:Name="TxtPassword" Placeholder="Password" IsPassword="True"/>
+            <Entry x:Name="TxtBackUpEmail" Placeholder="Backup Email"/>
+            <Entry x:Name="TxtPhone" Placeholder="Phone"/>
+            <Picker x:Name="PckCountry" Title="Select a country" ItemDisplayBinding="{Binding CountryName}"/>
+
+            <Button x:Name="BtnAdd" Text="Agregar Empleado" BackgroundColor="#61AFFE" Clicked="BtnAdd_Clicked"/>
+            <Button x:Name="BtnCancel" Text="Cancelar" BackgroundColor="#F93E3E" Clicked="BtnCancel_Clicked" />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
