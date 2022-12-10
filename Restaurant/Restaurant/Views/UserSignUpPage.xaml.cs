@@ -42,8 +42,7 @@ namespace Restaurant.Views
                 TxtEmail.Text != null && !string.IsNullOrEmpty(TxtEmail.Text.Trim()) &&
                 TxtPassword.Text != null && !string.IsNullOrEmpty(TxtPassword.Text.Trim()) &&
                 TxtBackUpEmail.Text != null && !string.IsNullOrEmpty(TxtBackUpEmail.Text.Trim()) &&
-                TxtPhone.Text != null && !string.IsNullOrEmpty(TxtPhone.Text.Trim()) &&
-                PckUserRole.SelectedIndex > -1 && PckCountry.SelectedIndex > -1)
+                TxtPhone.Text != null && !string.IsNullOrEmpty(TxtPhone.Text.Trim()))
             {
                 R = true;
             }
@@ -82,20 +81,6 @@ namespace Restaurant.Views
                 {
                     DisplayAlert("Validation error", "Phone number is required", "Ok");
                     TxtPhone.Focus();
-                    return false;
-                }
-
-                if (TxtActive.Text == null || string.IsNullOrEmpty(TxtActive.Text.Trim()))
-                {
-                    DisplayAlert("Validation error", "Active is required", "Ok");
-                    TxtActive.Focus();
-                    return false;
-                }
-
-                if (PckUserRole.SelectedIndex == -1)
-                {
-                    DisplayAlert("Validation error", "User Role is required", "Ok");
-                    PckUserRole.Focus();
                     return false;
                 }
 
@@ -150,5 +135,3 @@ namespace Restaurant.Views
                 }
             }
         }
-    }
-}
