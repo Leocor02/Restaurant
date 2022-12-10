@@ -88,15 +88,11 @@ namespace Restaurant.Views
 
 
                 if (GlobalItems.GlobalUser.IduserRole == 1) {
-                   
-                    //lo mando para el home de admin
-                    //await Navigation.PushAsync(new AppMenuPage());
+                    await Navigation.PushAsync(new HomeAdmin());
                 }
                 else
                 {
-                    await DisplayAlert("Global User", GlobalItems.GlobalUser.Name, "OK");
-                    //lo mando para el home de cliente
-                    //await Navigation.PushAsync(new AppMenuPage());
+                    await Navigation.PushAsync(new HomeClient());
                 }
              
                 TxtUserName.Text = "";
