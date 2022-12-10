@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Restaurant.Views.HomeAdmin"
-             NavigationPage.HasBackButton="False"
+             x:Class="Restaurant.Views.Admi.ManageEmployeesPage"
+             Title="Administrar Empleados"
              >
     <ContentPage.Content>
-        <ScrollView BackgroundColor="#F93E3E">
+        <ScrollView BackgroundColor="#85EA2D">
 
             <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Start">
 
-                <Label Text="Opciones" 
+                <Label Text="Opciones (Administrar Empleados)" 
                        Margin="50"
                        HorizontalOptions="CenterAndExpand"
                        HorizontalTextAlignment="Center"
@@ -30,43 +30,40 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Row="0" Grid.Column="0" Text="Administrar Empleados"
+                    <Button Grid.Row="0" Grid.Column="0" Text="Ver Empleados"
                             HeightRequest="150"
                             WidthRequest="150"
                             FontSize="15"
                             HorizontalOptions="Center"
                             CornerRadius="20"
                             BackgroundColor="#61AFFE"
-                            Clicked="Button_Clicked_1"
                             />
 
-                    <Button Grid.Row="0" Grid.Column="1" Text="Administrar Mesas"
+                    <Button Grid.Row="0" Grid.Column="1" Text="Agregar Empleado"
                                 HeightRequest="150"
                             WidthRequest="150"
                             FontSize="15"
                             HorizontalOptions="Center"
                             CornerRadius="20"
                             BackgroundColor="#49CC90"  
-                            Clicked="Button_Clicked_2"
                             />
 
-                    <Button Grid.Row="1" Grid.Column="0" Text="Ver Reservaciones"
+                    <Button Grid.Row="1" Grid.Column="0" Text="Modificar Empleado"
                               HeightRequest="150"
                             WidthRequest="150"
                             FontSize="15"
                             HorizontalOptions="Center"
                             CornerRadius="20"
                             BackgroundColor="#FCA130"
-                            Clicked="Button_Clicked_3"
                             />
 
-                    <Button Grid.Row="1" Grid.Column="1" Text=""
+                    <Button Grid.Row="1" Grid.Column="1" Text="Eliminar Empleado"
                              HeightRequest="150"
                             WidthRequest="150"
                             FontSize="15"
                             HorizontalOptions="Center"
                             CornerRadius="20"
-                            BackgroundColor="Transparent"
+                            BackgroundColor="#F93E3E"
                             />
 
                 </Grid>
