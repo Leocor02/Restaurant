@@ -14,7 +14,7 @@
                     <x:String>Terraza</x:String>
                 </Picker.Items>
             </Picker>
-            <Entry x:Name="txtQuantity" Placeholder="Cantidad de sillas"/>
+            <Entry x:Name="txtQuantity" Placeholder="Cantidad de sillas" Keyboard="Numeric"/>
 
             <Button x:Name="BtnAdd" Text="Agregar Mesa" Clicked="BtnAdd_Clicked"/>
             <Button x:Name="BtnCancel" Text="Cancelar" Clicked="BtnCancel_Clicked" />

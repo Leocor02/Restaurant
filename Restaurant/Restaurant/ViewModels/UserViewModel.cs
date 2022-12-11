@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading.Tasks;
 using Restaurant.Models;
 using Restaurant.Models.DTO;
-using Xamarin.Forms;
 
 namespace Restaurant.ViewModels
 {
