@@ -99,9 +99,12 @@ namespace Restaurant.Views
 
         private async void BtnAdd_Clicked(object sender, EventArgs e)
         {
-            if (TxtName.Text.Trim() == "" || TxtEmail.Text.Trim() == "" 
-                || TxtPassword.Text.Trim() == "" || TxtBackUpEmail.Text.Trim() == "" 
-                || TxtPhone.Text.Trim() == "") {
+            if (TxtName.Text == null || string.IsNullOrEmpty(TxtName.Text.Trim()) || 
+                TxtEmail.Text == null || string.IsNullOrEmpty(TxtEmail.Text.Trim()) ||
+                TxtPassword.Text == null || string.IsNullOrEmpty(TxtPassword.Text.Trim()) ||
+                TxtBackUpEmail.Text == null || string.IsNullOrEmpty(TxtBackUpEmail.Text.Trim()) ||
+                TxtPhone.Text.Trim() == null || string.IsNullOrEmpty(TxtPhone.Text.Trim())) {
+
 
                 await DisplayAlert(":)", "Fill all the fields", "Ok");
                 return;

@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Restaurant.Views.Admi.ManageTablesPage"
-             Title="Administrar Mesas"
+             x:Class="Restaurant.Views.Admi.ManageDishes"
+             Title="Administrar Platillos"
              >
     <ContentPage.Content>
-        <ScrollView BackgroundColor="#85EA2D">
+        <ScrollView BackgroundColor="Purple">
 
             <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Start">
 
-                <Label Text="Opciones (Administrar Empleados)" 
+                <Label Text="Opciones (Administrar Platillos)" 
                        Margin="50"
                        HorizontalOptions="CenterAndExpand"
                        HorizontalTextAlignment="Center"
@@ -30,7 +30,7 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Row="0" Grid.Column="0" Text="Ver Mesas"
+                    <Button Grid.Row="0" Grid.Column="0" Text="Ver Platillos"
                             HeightRequest="150"
                             WidthRequest="150"
                             FontSize="15"
@@ -39,23 +39,32 @@
                             BackgroundColor="#61AFFE"
                             />
 
-                    <Button Grid.Row="0" Grid.Column="1" Text="Agregar Mesa"
+                    <Button Grid.Row="0" Grid.Column="1" Text="Agregar Platillo"
                                 HeightRequest="150"
                             WidthRequest="150"
                             FontSize="15"
                             HorizontalOptions="Center"
                             CornerRadius="20"
-                            BackgroundColor="#49CC90"  
+                            BackgroundColor="#49CC90" 
                             Clicked="Button_Clicked"
                             />
 
-                    <Button Grid.Row="1" Grid.Column="0" Text="Modificar Mesa"
+                    <Button Grid.Row="1" Grid.Column="0" Text="Modificar Platillo"
                               HeightRequest="150"
                             WidthRequest="150"
                             FontSize="15"
                             HorizontalOptions="Center"
                             CornerRadius="20"
                             BackgroundColor="#FCA130"
+                            />
+
+                    <Button Grid.Row="1" Grid.Column="1" Text="Eliminar Platillo"
+                             HeightRequest="150"
+                            WidthRequest="150"
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            CornerRadius="20"
+                            BackgroundColor="#F93E3E"
                             />
                 </Grid>
 

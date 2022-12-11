@@ -44,5 +44,10 @@ namespace Restaurant.Views
             //btn Ver Reservaciones
             await Navigation.PushAsync(new ShowRevervationsPage());
         }
+
+        private async void Button_Clicked_4(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ManageDishes());
+        }
     }
 }
