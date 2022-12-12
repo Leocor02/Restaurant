@@ -31,9 +31,12 @@ namespace Restaurant.Views.Admi.Manage_Employees
 
         private async void BtnAdd_Clicked(object sender, EventArgs e)
         {
-            if (TxtName.Text.Trim() == "" || TxtEmail.Text.Trim() == ""
-                || TxtPassword.Text.Trim() == "" || TxtBackUpEmail.Text.Trim() == ""
-                || TxtPhone.Text.Trim() == "")
+            if (TxtName.Text == null || string.IsNullOrEmpty(TxtName.Text.Trim()) ||
+                TxtEmail.Text == null || string.IsNullOrEmpty(TxtEmail.Text.Trim()) ||
+                TxtPassword.Text == null || string.IsNullOrEmpty(TxtPassword.Text.Trim()) ||
+                TxtBackUpEmail.Text == null || string.IsNullOrEmpty(TxtBackUpEmail.Text.Trim()) ||
+                TxtPhone.Text == null || string.IsNullOrEmpty(TxtPhone.Text.Trim()) ||
+                PckCountry.SelectedIndex == -1)
             {
 
                 await DisplayAlert("Validacion!", "Todos los espacios son requeridos", "Ok");
@@ -41,7 +44,7 @@ namespace Restaurant.Views.Admi.Manage_Employees
 
             }
 
-            int IdCountry = 1;
+            int IdCountry = 0;
             int rolID = 3;//id rol empleado
 
             Country countryid = PckCountry.SelectedItem as Country;

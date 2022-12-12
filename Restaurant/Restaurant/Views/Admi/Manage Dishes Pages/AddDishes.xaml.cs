@@ -30,28 +30,25 @@ namespace Restaurant.Views.Admi.Manage_Dishes
 
         private async void BtnAdd_Clicked(object sender, EventArgs e)
         {
-            int idCountry = 0;
-
-            Country countryid = PckCountry.SelectedItem as Country;
-
-
-
-            idCountry = countryid.Idcountry;
 
             if (txtItemPicture.Text == null || string.IsNullOrEmpty(txtItemPicture.Text.Trim()) ||
                 txtDishDescription.Text == null || string.IsNullOrEmpty(txtDishDescription.Text.Trim()) ||
-                idCountry == 0)
+                PckCountry.SelectedIndex == -1)
             {
                 await DisplayAlert("Validacion!", "Todos los espacios son requeridos", "ok");
                 return;
             }
 
+            int idCountry = 0;
+
+            Country countryid = PckCountry.SelectedItem as Country;
+
+            idCountry = countryid.Idcountry;
+
             bool R = await viewModel.AddNewDish(
                 txtItemPicture.Text.Trim(),
                 txtDishDescription.Text.Trim(),
-                1
-                //idCountry
-                );
+                idCountry);
 
             if (R)
             {

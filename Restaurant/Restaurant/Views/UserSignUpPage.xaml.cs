@@ -103,7 +103,8 @@ namespace Restaurant.Views
                 TxtEmail.Text == null || string.IsNullOrEmpty(TxtEmail.Text.Trim()) ||
                 TxtPassword.Text == null || string.IsNullOrEmpty(TxtPassword.Text.Trim()) ||
                 TxtBackUpEmail.Text == null || string.IsNullOrEmpty(TxtBackUpEmail.Text.Trim()) ||
-                TxtPhone.Text.Trim() == null || string.IsNullOrEmpty(TxtPhone.Text.Trim())) {
+                TxtPhone.Text.Trim() == null || string.IsNullOrEmpty(TxtPhone.Text.Trim()) ||
+                PckCountry.SelectedIndex == -1) {
 
 
                 await DisplayAlert(":)", "Fill all the fields", "Ok");
@@ -111,12 +112,10 @@ namespace Restaurant.Views
 
             }
 
-            int IdCountry = 1;
+            int IdCountry;
             int rolID = 2;//id rol cliente
 
             Country countryid = PckCountry.SelectedItem as Country;
-
-
 
             IdCountry = countryid.Idcountry;
 
