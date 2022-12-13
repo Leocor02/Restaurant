@@ -1,4 +1,5 @@
-﻿using Restaurant.Models.DTO;
+﻿using Restaurant.Models;
+using Restaurant.Models.DTO;
 using Restaurant.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -15,10 +16,13 @@ namespace Restaurant.Views.Admi.Manage_Employees
     public partial class ShowEmployees : ContentPage
     {
         UserViewModel vm;
-        public ShowEmployees()
+        bool isEditPage { get; set; }
+        bool isDeletePage { get; set; }
+        public ShowEmployees(bool isEdit, bool isDelete)
         {
             InitializeComponent();
-
+            isEditPage = isEdit;
+            isDeletePage  = isDelete;
             BindingContext = vm = new UserViewModel();
 
             LoadItemList();
@@ -29,13 +33,43 @@ namespace Restaurant.Views.Admi.Manage_Employees
             listEmployees.ItemsSource = await vm.GetEmployeeList();
         }
 
+        private async void deleteEmployee(int userId)
+        {
+           bool response = await vm.deleteEmployee(userId);
+
+            if (response)
+            {
+                await DisplayAlert("Exito", "Empleado Eliminado correctamente", "OK");
+
+                await Navigation.PopAsync();
+            }
+            else
+            {
+                await DisplayAlert("Error", "Hubo un error al intentar eliminar el empleado", "OK");
+            }
+        }
         private async void listEmployees_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var selectedItem = e.Item as UserDTO;
+            if (isEditPage || isDeletePage) {
+                var selectedItem = e.Item as UserDTO;
 
-            if (selectedItem != null)
-            {
-               await  DisplayAlert("ID", selectedItem.Iduser.ToString(), "ok");
+                if (selectedItem != null)
+                {
+                    if (isDeletePage)
+                    {
+                        var answer = await DisplayAlert("Confirmacion requerida!", "seguro que deseas eliminar este empleado?", "Yes", "Nop");
+
+                        if (answer)
+                        {
+                            deleteEmployee(selectedItem.Iduser);
+                        }
+                    }
+                     
+                    if (isEditPage)
+                    {
+                        await DisplayAlert("Edit", selectedItem.Iduser.ToString(), "ok");
+                    }
+                }
             }
         }
     }

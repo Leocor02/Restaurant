@@ -47,11 +47,9 @@ namespace Restaurant.Models
 
                 request = new RestRequest(FinalURL, Method.Post);
 
-                //agregar la info de segueridad del api, en este caso api key
                 request.AddHeader(Services.CnnToRApi.ApiKeyName, Services.CnnToRApi.ApiKeyValue);
                 request.AddHeader(contentType, mimetype);
 
-                //serializar la clase para poder enviarla al api
                 var settings = new JsonSerializerSettings();
                 settings.NullValueHandling = NullValueHandling.Ignore;
 
@@ -78,6 +76,52 @@ namespace Restaurant.Models
                 string msg = ex.Message;
                 throw;
             }
+        }
+
+        public async Task<bool> deleteEmployee(int userId)
+        {
+
+            try
+            {
+
+                string RouteSufix = string.Format("Users/{0}",
+                   userId);
+                string FinalURL = Services.CnnToRApi.ProductionURL + RouteSufix;
+
+
+
+                RestClient client = new RestClient(FinalURL);
+
+
+
+                request = new RestRequest(FinalURL, Method.Delete);
+
+
+                request.AddHeader(Services.CnnToRApi.ApiKeyName, Services.CnnToRApi.ApiKeyValue);
+                request.AddHeader(contentType, mimetype);
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+
+                HttpStatusCode statusCode = response.StatusCode;
+
+                if (statusCode == HttpStatusCode.NoContent)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                throw;
+            }
+
+
+
         }
 
         public async Task<bool> ValidateLogin()

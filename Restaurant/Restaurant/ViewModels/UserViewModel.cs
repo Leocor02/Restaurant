@@ -148,7 +148,7 @@ namespace Restaurant.ViewModels
             
         }
    
- public async Task<UserDTO> getUserData(string email)
+        public async Task<UserDTO> getUserData(string email)
         {
 
             try
@@ -166,6 +166,36 @@ namespace Restaurant.ViewModels
             }
         }
 
+        public async Task<bool> deleteEmployee(int userId)
+        {
+            if (IsBusy) return false;
+            IsBusy = true;
+
+            try
+            {
+
+
+                bool R = await MyUser.deleteEmployee(userId);
+
+
+
+                return R;
+
+
+
+            }
+            catch (Exception)
+            {
+
+
+
+                return false;
+                throw;
+            }
+            finally
+            { IsBusy = false; }
+
+        }
 
         public async Task<bool> UserAccessValidation(string email, string password)
         {

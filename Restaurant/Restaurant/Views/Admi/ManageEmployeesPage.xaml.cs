@@ -27,7 +27,19 @@ namespace Restaurant.Views.Admi
         private async void Button_Clicked_1(object sender, EventArgs e)
         {
             //btn ver empleados
-            await Navigation.PushAsync(new ShowEmployees());
+            await Navigation.PushAsync(new ShowEmployees(false,false));
+        }
+
+        private async void Button_Clicked_2(object sender, EventArgs e)
+        {
+            //btn eliminar empleado
+            await Navigation.PushAsync(new ShowEmployees(false, true));
+        }
+
+        private async void Button_Clicked_3(object sender, EventArgs e)
+        {
+            //btn editar empleado
+            await Navigation.PushAsync(new ShowEmployees(true, false));
         }
     }
 }

@@ -21,9 +21,6 @@
     <EmbeddedResource Update="Views\Admi\Manage EmployeesPages\AddEmployee.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Admi\Manage EmployeesPages\DeleteEmployee.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\Admi\Manage EmployeesPages\EditEmployee.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
