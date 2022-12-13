@@ -5,10 +5,26 @@
              Title="Ver Empleados"
              >
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Show Employees"
+        <ScrollView>
+            <StackLayout>
+
+                <Label Text="Employees"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+                HorizontalOptions="CenterAndExpand"
+                Margin="50"       
+                       />
+
+                <ListView x:Name="listEmployees" RowHeight="200" ItemTapped="listEmployees_ItemTapped">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}" Detail="{Binding Email}"></TextCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

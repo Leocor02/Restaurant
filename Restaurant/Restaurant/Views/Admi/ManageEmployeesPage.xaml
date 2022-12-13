@@ -37,6 +37,7 @@
                             HorizontalOptions="Center"
                             CornerRadius="20"
                             BackgroundColor="#61AFFE"
+                            Clicked="Button_Clicked_1"
                             />
 
                     <Button Grid.Row="0" Grid.Column="1" Text="Agregar Empleado"

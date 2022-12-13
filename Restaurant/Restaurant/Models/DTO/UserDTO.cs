@@ -5,6 +5,7 @@ using System.Text;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using RestSharp;
+using System.Collections.ObjectModel;
 
 namespace Restaurant.Models.DTO
 {
@@ -100,6 +101,47 @@ namespace Restaurant.Models.DTO
             }
 
 
+
+        }
+
+        public async Task<ObservableCollection<UserDTO>> GetEmployeeList()
+        {
+            try
+            {
+                string RouteSufix = string.Format("Users/GetEmployeeList");
+
+                string FinalURL = Services.CnnToRApi.ProductionURL + RouteSufix;
+
+                RestClient client = new RestClient(FinalURL);
+
+                request = new RestRequest(FinalURL, Method.Get);
+
+                //agregar la info de seguridad del api, en este caso ApiKey
+                request.AddHeader(Services.CnnToRApi.ApiKeyName, Services.CnnToRApi.ApiKeyValue);
+                request.AddHeader(contentType, mimetype);
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+                HttpStatusCode statusCode = response.StatusCode;
+
+                if (statusCode == HttpStatusCode.OK)
+                {
+                    var list = JsonConvert.DeserializeObject<ObservableCollection<UserDTO>>(response.Content);
+
+                    return list;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                //TODO: guardar estos errores en una bitácora para su posterior analisis
+                throw;
+            }
 
         }
     }

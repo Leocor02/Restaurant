@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Restaurant.Models;
 using Restaurant.Models.DTO;
@@ -45,6 +46,44 @@ namespace Restaurant.ViewModels
             {
                 return null;
             }
+        }
+
+        public async Task<ObservableCollection<UserDTO>> GetEmployeeList()
+        {
+            if (IsBusy)
+            {
+                return null;
+            }
+            else
+            {
+                IsBusy = true;
+
+                try
+                {
+                    ObservableCollection<UserDTO> list = new ObservableCollection<UserDTO>();
+
+                    list = await MyUserDTO.GetEmployeeList();
+
+                    if (list == null)
+                    {
+                        return null;
+                    }
+
+                    return list;
+
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+                finally { IsBusy = false; }
+
+            }
+
+
+
+
+
         }
 
         public async Task<List<Country>> GetCountryList()

@@ -23,5 +23,11 @@ namespace Restaurant.Views.Admi
             //btn agregar empleado
             await Navigation.PushAsync(new AddEmployee());
         }
+
+        private async void Button_Clicked_1(object sender, EventArgs e)
+        {
+            //btn ver empleados
+            await Navigation.PushAsync(new ShowEmployees());
+        }
     }
 }
