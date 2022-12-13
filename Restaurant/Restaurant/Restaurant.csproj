@@ -30,9 +30,6 @@
     <EmbeddedResource Update="Views\Admi\Manage Tables Pages\addTable.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Admi\Manage Tables Pages\DeleteTable.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\Admi\Manage Tables Pages\EditTable.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

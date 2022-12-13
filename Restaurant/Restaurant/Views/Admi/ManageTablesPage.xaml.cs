@@ -1,4 +1,5 @@
-﻿using Restaurant.Views.Admi.Manage_Tables_Pages;
+﻿using Restaurant.Views.Admi.Manage_Employees;
+using Restaurant.Views.Admi.Manage_Tables_Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,18 @@ namespace Restaurant.Views.Admi
         {
             //btn agregar mesa
             await Navigation.PushAsync(new addTable());
+        }
+
+        private async void Button_Clicked_1(object sender, EventArgs e)
+        {
+            //btn ver mesas
+            await Navigation.PushAsync(new ShowTable(false));
+        }
+
+        private async void Button_Clicked_2(object sender, EventArgs e)
+        {
+            //btn editar mesa
+            await Navigation.PushAsync(new ShowTable(true));
         }
     }
 }

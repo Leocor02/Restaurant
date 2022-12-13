@@ -9,7 +9,7 @@
 
             <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Start">
 
-                <Label Text="Opciones (Administrar Empleados)" 
+                <Label Text="Opciones (Administrar Mesas)" 
                        Margin="50"
                        HorizontalOptions="CenterAndExpand"
                        HorizontalTextAlignment="Center"
@@ -37,6 +37,7 @@
                             HorizontalOptions="Center"
                             CornerRadius="20"
                             BackgroundColor="#61AFFE"
+                           Clicked="Button_Clicked_1"
                             />
 
                     <Button Grid.Row="0" Grid.Column="1" Text="Agregar Mesa"
@@ -56,6 +57,7 @@
                             HorizontalOptions="Center"
                             CornerRadius="20"
                             BackgroundColor="#FCA130"
+                            Clicked="Button_Clicked_2"
                             />
                 </Grid>
 
