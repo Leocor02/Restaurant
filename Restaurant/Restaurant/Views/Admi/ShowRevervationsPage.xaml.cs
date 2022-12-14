@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Restaurant.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,17 @@ namespace Restaurant.Views.Admi
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ShowRevervationsPage : ContentPage
     {
-        public ShowRevervationsPage()
+        ReservationViewModel vm;
+        public ShowRevervationsPage(bool listUserReservationsOnly)
         {
             InitializeComponent();
+            BindingContext = vm = new ReservationViewModel();
+            LoadItemList(listUserReservationsOnly);
+        }
+
+        private async void LoadItemList(bool listUserReservationsOnly)
+        {
+            listReservations.ItemsSource = await vm.GetAllReservationsList(listUserReservationsOnly);
         }
     }
 }

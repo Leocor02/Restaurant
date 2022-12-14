@@ -5,10 +5,40 @@
              Title="Ver Reservaciones"
              >
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Show Reservations"
+        <ScrollView>
+            <StackLayout>
+
+                <Label Text="Reservaciones"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+                HorizontalOptions="CenterAndExpand"
+                Margin="50"       
+                       />
+
+                <ListView x:Name="listReservations" RowHeight="200">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <StackLayout>
+                                        <Label Text="ID de la reservacion" TextColor="red"></Label>
+                                        <Label Text="{Binding Idreservation}" />
+                                    </StackLayout>
+                                    <StackLayout >
+                                        <Label Text="Fecha" TextColor="red"></Label>
+                                        <Label Margin="10" Text="{Binding Date}" />
+                                    </StackLayout>
+                                    <StackLayout >
+                                        <Label Text="Cantidad de personas" TextColor="red"></Label>
+                                        <Label Margin="10" Text="{Binding DinersQuantity}" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

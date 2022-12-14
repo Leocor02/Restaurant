@@ -24,7 +24,7 @@ namespace Restaurant.Views
         private async void Button_Clicked(object sender, EventArgs e)
         {
             //btn Ver Reservaciones
-            await Navigation.PushAsync(new ShowRevervationsPage());
+            await Navigation.PushAsync(new ShowRevervationsPage(false));
         }
 
         private async void Button_Clicked_1(object sender, EventArgs e)
@@ -35,6 +35,7 @@ namespace Restaurant.Views
 
         private async void Button_Clicked_2(object sender, EventArgs e)
         {
+            //btn show table
             await Navigation.PushAsync(new ShowTable(false));
         }
     }

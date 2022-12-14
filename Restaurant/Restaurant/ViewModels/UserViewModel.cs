@@ -109,7 +109,6 @@ namespace Restaurant.ViewModels
             }
         }
 
-        //funcion para agregar usuario
         public async Task<bool> AddNewUser(string pName,
                                            string pEmail,
                                            string pPassword,

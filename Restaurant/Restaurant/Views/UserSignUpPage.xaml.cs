@@ -106,7 +106,6 @@ namespace Restaurant.Views
                 TxtPhone.Text.Trim() == null || string.IsNullOrEmpty(TxtPhone.Text.Trim()) ||
                 PckCountry.SelectedIndex == -1) {
 
-
                 await DisplayAlert(":)", "Fill all the fields", "Ok");
                 return;
 
