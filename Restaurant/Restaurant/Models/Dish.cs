@@ -65,5 +65,51 @@ namespace Restaurant.Models
                 throw;
             }
         }
+
+        public async Task<bool> deleteDish(int idDish)
+        {
+
+            try
+            {
+
+                string RouteSufix = string.Format("Dishes/{0}",
+                   idDish);
+                string FinalURL = Services.CnnToRApi.ProductionURL + RouteSufix;
+
+
+
+                RestClient client = new RestClient(FinalURL);
+
+
+
+                request = new RestRequest(FinalURL, Method.Delete);
+
+
+                request.AddHeader(Services.CnnToRApi.ApiKeyName, Services.CnnToRApi.ApiKeyValue);
+                request.AddHeader(contentType, mimetype);
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+
+                HttpStatusCode statusCode = response.StatusCode;
+
+                if (statusCode == HttpStatusCode.NoContent)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+                throw;
+            }
+
+
+
+        }
     }
 }

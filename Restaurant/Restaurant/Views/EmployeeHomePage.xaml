@@ -7,7 +7,7 @@
 
             <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Start">
 
-                <Label Text="Opciones" 
+                <Label Text="Opciones (Empleado)" 
                        Margin="50"
                        HorizontalOptions="CenterAndExpand"
                        HorizontalTextAlignment="Center"
@@ -28,13 +28,44 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Button Grid.Row="1" Grid.Column="0" Text="Ver Reservaciones"
+                    <Button Grid.Row="0" Grid.Column="0" Text="Ver Resevaciones"
                             HeightRequest="150"
                             WidthRequest="150"
                             FontSize="15"
                             HorizontalOptions="Center"
                             CornerRadius="20"
+                            BackgroundColor="#61AFFE"
+                            Clicked="Button_Clicked"
+                            />
+
+                    <Button Grid.Row="0" Grid.Column="1" Text="Ver Platillos"
+                                HeightRequest="150"
+                            WidthRequest="150"
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            CornerRadius="20"
+                            BackgroundColor="#49CC90"  
+                            Clicked="Button_Clicked_1"
+                            />
+
+                    <Button Grid.Row="1" Grid.Column="0" Text="Ver Mesas"
+                              HeightRequest="150"
+                            WidthRequest="150"
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            CornerRadius="20"
                             BackgroundColor="#FCA130"
+                            Clicked="Button_Clicked_2"
+                            />
+
+                    <Button Grid.Row="1" Grid.Column="1"
+                             HeightRequest="150"
+                            WidthRequest="150"
+                            FontSize="15"
+                            HorizontalOptions="Center"
+                            CornerRadius="20"
+                            IsEnabled="false"
+                            BackgroundColor="Transparent"
                             />
 
                 </Grid>

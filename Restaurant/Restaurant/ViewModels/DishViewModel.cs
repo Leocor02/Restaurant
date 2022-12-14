@@ -1,6 +1,8 @@
 ﻿using Restaurant.Models;
+using Restaurant.Models.DTO;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,9 +12,12 @@ namespace Restaurant.ViewModels
     {
         public Dish MyDish { get; set; }
         public Country MyCountry { get; set; }
+
+        public DishDTO MyDishDTO { get; set; }
         public DishViewModel() {
         MyDish = new Dish();
         MyCountry = new Country();
+        MyDishDTO = new DishDTO();
         }
 
         public async Task<List<Country>> GetCountryList()
@@ -62,6 +67,75 @@ namespace Restaurant.ViewModels
             {
                 IsBusy = false;
             }
+
+        }
+
+        public async Task<ObservableCollection<DishDTO>> GetDishesList()
+        {
+            if (IsBusy)
+            {
+                return null;
+            }
+            else
+            {
+                IsBusy = true;
+
+                try
+                {
+                    ObservableCollection<DishDTO> list = new ObservableCollection<DishDTO>();
+
+                    list = await MyDishDTO.GetDishesList();
+
+                    if (list == null)
+                    {
+                        return null;
+                    }
+
+                    return list;
+
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+                finally { IsBusy = false; }
+
+            }
+
+
+
+
+
+        }
+
+        public async Task<bool> deleteDish(int idDish)
+        {
+            if (IsBusy) return false;
+            IsBusy = true;
+
+            try
+            {
+
+
+                bool R = await MyDish.deleteDish(idDish);
+
+
+
+                return R;
+
+
+
+            }
+            catch (Exception)
+            {
+
+
+
+                return false;
+                throw;
+            }
+            finally
+            { IsBusy = false; }
 
         }
     }

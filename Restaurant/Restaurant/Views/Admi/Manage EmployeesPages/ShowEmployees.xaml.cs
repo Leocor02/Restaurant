@@ -24,7 +24,6 @@ namespace Restaurant.Views.Admi.Manage_Employees
             isEditPage = isEdit;
             isDeletePage  = isDelete;
             BindingContext = vm = new UserViewModel();
-
             LoadItemList();
         }
 
