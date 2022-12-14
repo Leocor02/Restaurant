@@ -21760,7 +21760,7 @@ namespace Restaurant.Droid
 			public const int avd_show_password = 2131165270;
 			
 			// aapt resource value: 0x7F070057
-			public const int Background = 2131165271;
+			public const int BackgroundApp = 2131165271;
 			
 			// aapt resource value: 0x7F070058
 			public const int btn_checkbox_checked_mtrl = 2131165272;

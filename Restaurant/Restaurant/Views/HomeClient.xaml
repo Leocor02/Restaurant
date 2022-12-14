@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Restaurant.Views.HomeClient">
     <ContentPage.Content>
-        <ScrollView BackgroundColor="#F93E3E">
+        <ScrollView BackgroundColor="#0355B2">
 
             <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Start">
 
@@ -44,7 +44,7 @@
                             FontSize="15"
                             HorizontalOptions="Center"
                             CornerRadius="20"
-                            BackgroundColor="#49CC90"  
+                            BackgroundColor="#61AFFE"  
                             Clicked="Button_Clicked"
                             />
 
@@ -54,7 +54,7 @@
                             FontSize="15"
                             HorizontalOptions="Center"
                             CornerRadius="20"
-                            BackgroundColor="#FCA130"
+                            BackgroundColor="#61AFFE"
                             Clicked="Button_Clicked_1"
                             />
 

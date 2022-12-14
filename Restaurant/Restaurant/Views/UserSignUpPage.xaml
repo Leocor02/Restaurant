@@ -9,7 +9,7 @@
             <Entry x:Name="TxtName" Placeholder="Nombre"/>
             <Entry x:Name="TxtEmail" Placeholder="Correo" Keyboard="Email"/>
             <Entry x:Name="TxtPassword" Placeholder="Contraseña" IsPassword="True"/>
-            <Entry x:Name="TxtBackUpEmail" Placeholder="Correo de Respaldo"/>
+            <Entry x:Name="TxtBackUpEmail" Placeholder="Correo de Respaldo" Keyboard="Email"/>
             <Entry x:Name="TxtPhone" Placeholder="Número de Teléfono"/>
             <Picker x:Name="PckCountry" Title="Selecione su País" ItemDisplayBinding="{Binding CountryName}"/>
 

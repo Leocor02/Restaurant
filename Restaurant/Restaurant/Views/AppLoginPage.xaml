@@ -4,13 +4,15 @@
              x:Class="Restaurant.Views.AppLoginPage"
              Shell.NavBarIsVisible="False"
              NavigationPage.HasNavigationBar="False"
-             BackgroundImageSource="Background">
+             BackgroundImageSource="BackgroundApp">
 
     <ContentPage.Content>
 
         <StackLayout Padding="40,0,40,0" VerticalOptions="Center" >
 
-            <Entry x:Name="TxtUserName" Placeholder="Correo Electrónico" FontSize="22" Keyboard="Email" TextColor="GhostWhite" PlaceholderColor="white"/>
+            <Label Padding="0,0,0,80" Text="Restaurente Come y vive" FontSize="25" TextColor="GhostWhite" HorizontalOptions="Center"/>
+
+            <Entry x:Name="TxtUserName" Placeholder="Correo Electrónico" FontSize="22" Keyboard="Email" TextColor="GhostWhite" PlaceholderColor="#FFFFFF"/>
 
             <StackLayout Padding="0,5,0,30" Orientation="Horizontal" Spacing="15" HorizontalOptions="FillAndExpand">
 
@@ -18,13 +20,13 @@
 
                 <StackLayout>
                     <Switch x:Name="SwWatchPassword" IsToggled="False" Toggled="CmdWatchPassword"/>
-                    <Label Text="Ver Contraseña" FontSize="Micro" TextColor="White" HorizontalTextAlignment="Center"/>
+                    <Label Text="Ver Contraseña" FontSize="13" TextColor="White" HorizontalTextAlignment="Center"/>
                 </StackLayout>
 
             </StackLayout>
 
-            <Button x:Name="BtnLogin" Text="Iniciar Sesión" FontSize="22" CornerRadius="20" BackgroundColor="#2AA397" Margin="0,5,0,5" Clicked="BtnLogin_Clicked" />
-            <Button x:Name="BtnSignIn" Text="Registrarse" FontSize="22" CornerRadius="20" BackgroundColor="#2AA397" Clicked="BtnSignIn_Clicked"/>
+            <Button x:Name="BtnLogin" Text="Iniciar Sesión" FontSize="22" CornerRadius="20" BackgroundColor="#C31A13" Margin="0,5,0,5" Clicked="BtnLogin_Clicked" />
+            <Button x:Name="BtnSignIn" Text="Registrarse" FontSize="22" CornerRadius="20" BackgroundColor="#C31A13" Clicked="BtnSignIn_Clicked"/>
 
 
         </StackLayout>
