@@ -70,6 +70,33 @@ namespace Restaurant.ViewModels
 
         }
 
+        public async Task<bool> EditDish(int idDish,string ItemPictureUrl, string DishDescription, int Idcountry)
+        {
+            if (IsBusy) return false;
+            IsBusy = true;
+
+            try
+            {
+                MyDishDTO.Iddish= idDish;
+                MyDishDTO.ItemPictureUrl = ItemPictureUrl;
+                MyDishDTO.DishDescription = DishDescription;
+                MyDishDTO.Idcountry = Idcountry;
+
+                bool R = await MyDishDTO.EditDish(idDish);
+                return R;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+
+        }
+
         public async Task<ObservableCollection<DishDTO>> GetDishesList()
         {
             if (IsBusy)
@@ -136,6 +163,31 @@ namespace Restaurant.ViewModels
             }
             finally
             { IsBusy = false; }
+
+        }
+
+        public async Task<DishDTO> GetDishData(int idDish)
+        {
+            try
+            {
+                DishDTO dish = new DishDTO();
+
+                dish = await MyDishDTO.GetDishData(idDish);
+
+                if (dish == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return dish;
+                }
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
 
         }
     }

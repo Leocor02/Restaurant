@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Restaurant.Views.Admi.Manage_Dishes_Pages.EditDish">
+    <ContentPage.Content>
+        <StackLayout Padding="20,100,20,0" HorizontalOptions="FillAndExpand">
+            <Entry x:Name="txtItemPicture" Placeholder="URL de la imagen"/>
+            <Entry x:Name="txtDishDescription" Placeholder="Descripcion del platillo"/>
+            <Picker x:Name="PckCountry" Title="Selecione el pais de origen del platillo"  ItemDisplayBinding="{Binding CountryName}"/>
+
+            <Button x:Name="BtnAdd" Text="Modificar Platillo" Clicked="BtnAdd_Clicked"/>
+            <Button x:Name="BtnCancel" Text="Cancelar" Clicked="BtnCancel_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

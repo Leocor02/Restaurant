@@ -18,6 +18,9 @@
     <EmbeddedResource Update="Views\Admi\Manage Dishes Pages\AddDishes.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Admi\Manage Dishes Pages\EditDish.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Admi\Manage Dishes Pages\ShowDishes.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

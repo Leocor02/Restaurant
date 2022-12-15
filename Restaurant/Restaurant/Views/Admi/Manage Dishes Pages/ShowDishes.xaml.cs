@@ -28,6 +28,12 @@ namespace Restaurant.Views.Admi.Manage_Dishes_Pages
             LoadItemList();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            LoadItemList();
+        }
+
         private async void LoadItemList()
         {
             listDishes.ItemsSource = await vm.GetDishesList();
@@ -68,7 +74,7 @@ namespace Restaurant.Views.Admi.Manage_Dishes_Pages
 
                     if (isEditPage)
                     {
-                        await DisplayAlert("Edit", selectedItem.Iddish.ToString(), "ok");
+                        await Navigation.PushAsync(new EditDish(selectedItem.Iddish));
                     }
                 }
             }
