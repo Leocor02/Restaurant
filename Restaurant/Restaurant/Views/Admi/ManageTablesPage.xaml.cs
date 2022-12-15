@@ -30,11 +30,5 @@ namespace Restaurant.Views.Admi
             //btn ver mesas
             await Navigation.PushAsync(new ShowTable(false));
         }
-
-        private async void Button_Clicked_2(object sender, EventArgs e)
-        {
-            //btn editar mesa
-            await Navigation.PushAsync(new ShowTable(true));
-        }
     }
 }
