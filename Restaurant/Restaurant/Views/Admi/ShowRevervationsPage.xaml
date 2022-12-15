@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Restaurant.Views.Admi.ShowRevervationsPage"
-             Title="Ver Reservaciones"
-             >
+             x:Class="Restaurant.Views.Admi.ShowRevervationsPage">
+    
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
@@ -11,8 +10,9 @@
                 <Label Text="Reservaciones"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
-                Margin="50"       
-                       />
+                Padding="0,20,0,10"
+                FontSize="Large"
+                TextColor="#282424"/>
 
                 <ListView x:Name="listReservations" RowHeight="200">
                     <ListView.ItemTemplate>
@@ -20,16 +20,16 @@
                             <ViewCell>
                                 <StackLayout>
                                     <StackLayout>
-                                        <Label Text="ID de la reservacion" TextColor="red"></Label>
-                                        <Label Text="{Binding Idreservation}" />
+                                        <Label FontSize="17" Padding="10,0,0,0" Text="ID de la reservación" TextColor="red"></Label>
+                                        <Label FontSize="17" Padding="10,0,0,10" Text="{Binding Idreservation}" />
                                     </StackLayout>
                                     <StackLayout >
-                                        <Label Text="Fecha" TextColor="red"></Label>
-                                        <Label Margin="10" Text="{Binding Date}" />
+                                        <Label FontSize="17" Padding="10,0,0,0" Text="Fecha" TextColor="red"></Label>
+                                        <Label FontSize="17" Padding="10,0,0,10" Text="{Binding Date}" />
                                     </StackLayout>
-                                    <StackLayout >
-                                        <Label Text="Cantidad de personas" TextColor="red"></Label>
-                                        <Label Margin="10" Text="{Binding DinersQuantity}" />
+                                    <StackLayout>
+                                        <Label FontSize="17" Padding="10,0,0,0" Text="Cantidad de personas" TextColor="red"></Label>
+                                        <Label FontSize="17" Padding="10,0,0,10" Text="{Binding DinersQuantity}" />
                                     </StackLayout>
                                 </StackLayout>
                             </ViewCell>

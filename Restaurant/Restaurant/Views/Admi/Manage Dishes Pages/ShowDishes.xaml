@@ -9,8 +9,9 @@
                 <Label Text="Platillos"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
-                Margin="50"       
-                       />
+                Padding="0,20,0,10"
+                FontSize="Large"
+                TextColor="#282424"/>
 
                 <ListView x:Name="listDishes" RowHeight="200" ItemTapped="listDishes_ItemTapped">
 

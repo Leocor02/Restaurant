@@ -3,7 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Restaurant.Views.Admi.Manage_Reservation_Pages.AddReservationPage">
     <ContentPage.Content>
-        <StackLayout Padding="20,100,20,0" HorizontalOptions="FillAndExpand">
+        <StackLayout Padding="20,30,20,0" HorizontalOptions="FillAndExpand">
+
+            <Label Text="Realize su reservación" HorizontalOptions="Center" FontSize="Large" Padding="0,0,0,15" TextColor="#282424"/>
+
             <DatePicker 
                 x:Name="datePicker"
             MinimumDate="01/01/2022"
@@ -12,8 +15,8 @@
             <Entry x:Name="txtDinnersQuantity" Placeholder="Cantidad de personas" Keyboard="Numeric"/>
             <Picker x:Name="pickerTable" Title="Selecione la mesa" ItemDisplayBinding="{Binding ChairQuantity}"/>
 
-            <Button x:Name="BtnAdd" Text="Agregar Reservacion" Clicked="BtnAdd_Clicked"/>
-            <Button x:Name="BtnCancel" Text="Cancelar" Clicked="BtnCancel_Clicked"/>
+            <Button x:Name="BtnAdd" Text="Agregar Reservación" FontSize="15" Margin="0,10,0,3" Clicked="BtnAdd_Clicked"/>
+            <Button x:Name="BtnCancel" Text="Cancelar" FontSize="15" Clicked="BtnCancel_Clicked"/>
 
         </StackLayout>
         </ContentPage.Content>
