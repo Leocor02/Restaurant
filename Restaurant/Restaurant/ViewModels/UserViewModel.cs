@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Net;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Restaurant.Models;
 using Restaurant.Models.DTO;
+using RestSharp;
 
 namespace Restaurant.ViewModels
 {
@@ -83,6 +86,31 @@ namespace Restaurant.ViewModels
 
 
 
+
+        }
+
+        public async Task<UserDTO> GetEmployeeData(int idUser)
+        {
+            try
+            {
+                UserDTO employee = new UserDTO();
+
+                employee = await MyUserDTO.GetEmployeeData(idUser);
+
+                if (employee == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return employee;
+                }
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
 
         }
 

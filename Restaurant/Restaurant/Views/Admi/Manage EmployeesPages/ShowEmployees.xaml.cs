@@ -66,7 +66,7 @@ namespace Restaurant.Views.Admi.Manage_Employees
                      
                     if (isEditPage)
                     {
-                        await DisplayAlert("Edit", selectedItem.Iduser.ToString(), "ok");
+                        await Navigation.PushAsync(new EditEmployee(selectedItem.Iduser));
                     }
                 }
             }
