@@ -11,8 +11,10 @@
                 <Label Text="Employees"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
-                Margin="50"       
-                       />
+                Padding="0,20,0,10"
+                FontSize="Large"
+                TextColor="#282424"/>    
+                 
 
                 <ListView x:Name="listEmployees" RowHeight="200" ItemTapped="listEmployees_ItemTapped">
 

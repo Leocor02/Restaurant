@@ -10,7 +10,7 @@ namespace Restaurant.Services
         //además se define la info de api key necesaria
         //para poder consumir los controladores
 
-        public static string ProductionURL = "http://192.168.0.13:45455/api/";
+        public static string ProductionURL = "http://192.168.0.9:45455/api/";
         public static string TestingURL = "http://192.168.0.9:45455/api/";
 
         public static string ApiKeyName = "RApiKey";

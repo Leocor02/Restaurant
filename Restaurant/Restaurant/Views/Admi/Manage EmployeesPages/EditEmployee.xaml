@@ -10,12 +10,12 @@
             <Entry x:Name="TxtName" Placeholder="Name"/>
             <Entry x:Name="TxtEmail" Placeholder="Email" Keyboard="Email"/>
             <Entry x:Name="TxtPassword" Placeholder="Password" IsPassword="True"/>
-            <Entry x:Name="TxtBackUpEmail" Placeholder="Backup Email"/>
+            <Entry x:Name="TxtBackUpEmail" Placeholder="Backup Email" Keyboard="Email"/>
             <Entry x:Name="TxtPhone" Placeholder="Phone"/>
             <Picker x:Name="PckCountry" Title="Select a country" ItemDisplayBinding="{Binding CountryName}"/>
 
             <Button x:Name="BtnAdd" Text="Editar Empleado" BackgroundColor="#61AFFE"/>
-            <Button x:Name="BtnCancel" Text="Cancelar" BackgroundColor="#F93E3E" Clicked="BtnCancel_Clicked" />
+            <Button x:Name="BtnCancel" Text="Cancelar" BackgroundColor="#61AFFE" Clicked="BtnCancel_Clicked" />
 
         </StackLayout>
     </ContentPage.Content>

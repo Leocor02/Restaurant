@@ -10,7 +10,7 @@
 
         <StackLayout Padding="40,0,40,0" VerticalOptions="Center" >
 
-            <Label Padding="0,0,0,80" Text="Restaurente Come y vive" FontSize="25" TextColor="GhostWhite" HorizontalOptions="Center"/>
+            <Label Padding="0,0,0,80" Text="Restaurante Come y vive" FontSize="25" TextColor="GhostWhite" HorizontalOptions="Center"/>
 
             <Entry x:Name="TxtUserName" Placeholder="Correo Electrónico" FontSize="22" Keyboard="Email" TextColor="GhostWhite" PlaceholderColor="#FFFFFF"/>
 

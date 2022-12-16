@@ -2,15 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Restaurant.Views.Admi.ManageTablesPage"
+             BackgroundImageSource="ManageBackground"
              Title="Administrar Mesas"
              >
     <ContentPage.Content>
-        <ScrollView BackgroundColor="#85EA2D">
+        <ScrollView>
 
             <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="Start">
 
                 <Label Text="Opciones (Administrar Mesas)" 
-                       Margin="50"
+                       Margin="40"
                        HorizontalOptions="CenterAndExpand"
                        HorizontalTextAlignment="Center"
                        VerticalOptions="CenterAndExpand" 
@@ -18,7 +19,7 @@
                        TextColor="White"
                        />
 
-                <Grid RowSpacing="20" ColumnSpacing="20" Padding="0,50,0,0">
+                <Grid RowSpacing="20" ColumnSpacing="20" Padding="0,20,0,0">
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -36,7 +37,7 @@
                             FontSize="15"
                             HorizontalOptions="Center"
                             CornerRadius="20"
-                            BackgroundColor="#61AFFE"
+                            BackgroundColor="#69B5FF"
                            Clicked="Button_Clicked_1"
                             />
 
@@ -46,7 +47,7 @@
                             FontSize="15"
                             HorizontalOptions="Center"
                             CornerRadius="20"
-                            BackgroundColor="#49CC90"  
+                            BackgroundColor="#4FB756"
                             Clicked="Button_Clicked"
                             />
                 </Grid>

@@ -9,8 +9,9 @@
                 <Label Text="Mesas"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
-                Margin="50"       
-                       />
+                Padding="0,40,0,0"
+                FontSize="Large"
+                TextColor="#282424"/>
 
                 <ListView x:Name="listTables" RowHeight="200" ItemTapped="listTables_ItemTapped">
 

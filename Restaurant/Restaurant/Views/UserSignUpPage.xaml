@@ -2,10 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Restaurant.Views.UserSignUpPage"
+             Shell.NavBarIsVisible="false"
+             NavigationPage.HasNavigationBar="False"
              NavigationPage.HasBackButton="False"
              >
     <ContentPage.Content>
-        <StackLayout Padding="20,100,20,0" HorizontalOptions="FillAndExpand">
+        <StackLayout Padding="20,20,20,0" HorizontalOptions="FillAndExpand">
+           
+            <Label Padding="0,20,0,10" 
+                   Text="Registrarse" 
+                   TextColor="#282424" 
+                   FontSize="Large" 
+                   HorizontalOptions="Center"/>
+
             <Entry x:Name="TxtName" Placeholder="Nombre"/>
             <Entry x:Name="TxtEmail" Placeholder="Correo" Keyboard="Email"/>
             <Entry x:Name="TxtPassword" Placeholder="Contraseña" IsPassword="True"/>
